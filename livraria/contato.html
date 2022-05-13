@@ -3,48 +3,42 @@
     <head>
         <title>Projeto Livraria</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/estilo.css" type="text/css" />
+       
     </head>
     <body>
         <!-- Setor de cabeçalho -->
-        <header class="text-center">
-            <img src="imagens/logotipo.jpeg"  width="120" />
-         </header>
-         
-         <!-- Setor de conteúdo-->
-         <section class="container">
-             <h1 class="text-center">Login</h1>
-                     <a href="../index.html">
+        <header>
+            <a href="../index.html">
+                    <img src="../imagens/logotipo.jpg"  width="120" />
+            </a>
         </header>
         <!-- Setor de navegação-->
         <nav>
             <a target="_blank" href="https://www.amazon.com.br/">Visite a Amazon</a>
-            <a href="produto.html">Produto</a>
+            <a href="produtos.html">Produtos</a>
         </nav>
         <!-- Setor de conteúdo-->
         <section>
             <h1>Entre em contato conosco. Conheça nossos canais</h1>
-            <!--Formulário de Contato-->
-            <form id="formLogin" method="post" action="index.html" class="w-50 mx-auto p-3 mt-5 mb-5" 
-            style="border:1px solid #ccc;border-radius:12px;">
+            <!--Formulário de contato -->
+            <form id="formContato">
                 <fieldset>
-                    <legend>Preencha os campos para entrar</legend>
-                    <div class="form-group">
-                        <label>E-mail :</label>
-                        <input class="form-control" name="email" id="email" maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label>Senha :</label>
-                        <input class="form-control" type="password" name="senha" id="senha" maxlength="8">
+                    <legend>Fale conosco</legend>
+                    <div>
+                        <label>Nome :<br /></label>
+                        <input name="nomeContato" id="nomeContato" maxlength="50" required>
                     </div>
                     <div>
-                        <div class="form-group">
-                            <label>Comentários :</label>
-                            <input class="form-control" type="comentários" name="comentários" id="comentários" maxlength="">
-                        </div>
-                        <div>
-                        
-                        <button type="button" id="btLogin" class="btn btn-info">Confirmar</button>
+                        <label>Email :<br /></label>
+                        <input name="emailContato" id="emailContato" type="email" required>
+                    </div>
+                    <div>
+                        <label>Comentários :<br /></label>
+                        <textarea name="comentario" id="comentario" rows="8"></textarea>
+                    </div>
+                    <div>
+                        <button id="btContato" type="button">Confirmar</button>
                     </div>
                 </fieldset>
             </form>
@@ -64,14 +58,14 @@
                     <li>Autores</li>
                     <li>Categorias</li>
                 </ul>
-                
-                <!--Formulário de Contato-->
+
+                <!--Formulário de contato -->
             <form method="get" action="https://www.google.com/search">
                 <fieldset>
-                    <legend>Fale conosco</legend>
+                    <legend>Pesquise no Google</legend>
                     <div>
                         <label>Palavra-chave :</label>
-                        <input name="q" maxlength="50" required>
+                        <input name="q" maxlength="50">
                     </div>
                     <div>
                         <button>Confirmar</button>
@@ -107,12 +101,13 @@
                     <img src="https://images-na.ssl-images-amazon.com/images/I/51a6cC07f%2BL._SY344_BO1,204,203,200_QL70_ML2_.jpg" width="150"/>
                     </a>
                 </div>
+
             </article>
         </section>
         <!-- Setor de rodapé-->
-        <footer class="bg-dark p-4 text-white text-center mt-4">
-            <p> &copy;2022 - Todos os direitos reservados.</p>
-         </footer>
+        <footer>
+           <p> &copy;2022 - Todos os direitos reservados.</p>
+        </footer>
     </body>
     <script src="../js/controle.js"></script>
 </html>

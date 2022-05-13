@@ -1,12 +1,8 @@
-console.log('Js Index!')
+
 let user=localStorage.emailUser
 let bemVindo=document.querySelector("#bemVindo")
 let entrar=document.querySelector("#entrar")
-let sair=document.querySelector("#sair")
-
-//console.log(user.indexOf('@'))
-//console.log(user.substring(0,user.indexOf('@')))
-
+let Sair=document.querySelector("#Sair")
 
 
 function msgUser(){
@@ -14,14 +10,16 @@ function msgUser(){
     bemVindo.innerHTML='Olá <b>' + nomeUser + '</b>'
     entrar.style.display="none"
 }
+
 function resetUser(){
-    sair.style.display="none"
+    Sair.style.display="none"
 }
 
-sair.onclick=function(){
+Sair.onclick=function(){
     localStorage.removeItem('emailUser')
     location.href='index.html'
 }
 
-//localStorage.emailUser ? bemVindo.innerHTML='Olá ' + user : null
+
 localStorage.emailUser ? msgUser() : resetUser()
+
