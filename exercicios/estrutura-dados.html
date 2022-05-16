@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projeto Livraria</title>
+        <meta charset="utf-8" />
+        
+    </head>
+    <body>
+        <h1>Estrutura de Dados</h1>
+        <div>
+            <h2>Função recursiva</h2>
+            <div id="recursiva"></div>
+            <h2>Recursiva consumindo array</h2>
+            <div id="lerArray"></div>
+        </div>
+
+        <h2>Filas</h2>
+    <div>   
+        <p>Próximo Cliente</p>
+        <p id="next"></p>
+        <p>Usuários Atendidos</p>
+        <ul id="result"></ul>
+        <p>Usuários aguardando suporte</p>
+        <ul id="users"></ul>
+        <button id="btAtende">Atendimento Concluído</button>
+    </div> 
+
+    </body>
+    <script>
+        let n=20
+        let paises=["Brasil","França","Alemanha","Argentina"]
+        let x=0
+
+        function recursiva_array(obj){
+            if(x < paises.length){
+                obj.innerHTML+=paises[x] + "<br />"
+                x++
+                recursiva_array(document.querySelector("#lerArray")) 
+            }
+        }
+        //1° Chamada
+        recursiva_array(document.querySelector("#lerArray"))
+
+        function recursiva(obj){
+            if(n >-0){
+                //n--
+                n = n -1
+                //return n  
+                obj.innerHTML+=n + "<br />"
+                recursiva(document.querySelector("#recursiva")) 
+            }
+        }
+        //1° Chamada
+        recursiva(document.querySelector("#recursiva"))
+
+        //console.log(recursiva())
+        //console.log(recursiva())
+        //console.log(recursiva())
+        //console.log(chama_recursiva())
+        //document.querySelector("#recursiva").innerHTML=recursiva() + "<br />"
+
+        //FILAS = QUEDES (FIFO = First in, First Out)
+
+        let fila = []
+        let usuariosAtendidos=[]
+        fila.push(25)
+        fila.push(34)
+        fila.push(9)
+        //fila criada
+        console.log(fila)
+        console.log(fila[0])
+        usuariosAtendidos.push(fila[0])
+
+        fila.shift()
+        console.log("Array após a primeira chamada",fila)
+
+        console.log(fila[0])
+        usuariosAtendidos.push(fila[0])
+        fila.shift()
+        console.log("Array após a segunda chamada",fila)
+        console.log("Usuários Atendidos",usuariosAtendidos)
+
+        //next=próximo user
+        //users=lista de pendência
+        //result=lista de atendidos
+        //btAtende=botão de confirmação
+
+        let listaUsers=["Alan","Debora","Francis","Georgia","Osmar"]
+        let listaResult=[]
+
+        function users(){
+            document.querySelector("#users").innerHTML=""
+            for(var i=0;i<listaUsers.length;i++){
+                document.querySelector("#users").innerHTML+="<li>" + listaUsers[i] + "</li>"
+            }
+            listaUsers.length > 0 ? document.querySelector("#next").innerHTML=listaUsers[0] : null
+    }
+
+        users()
+
+        document.querySelector("#btAtende").onclick=function(){
+            if(listaUsers.length > 0){
+            listaResult.push(listaUsers[0])
+            document.querySelector("#result").innerHTML=""
+            for(var i=0;i<listaResult.length;i++){
+                document.querySelector("#result").innerHTML+="<li>" + listaResult[i] + "</li>"
+            }
+            listaUsers.shift()
+            users()
+            }else {
+                document.querySelector("#next").innerHTML="<b>Todos os clientes foram atendidos</b>"
+            }
+        }
+    
+
+
+    </script>
+
+</html>
