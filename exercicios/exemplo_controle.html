@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <title>Exemplos de Controle</title>
+</head>
+<body>
+    <section class="container mt-5">
+        <iframe class="w-100" width="560" height="315" src="https://www.youtube.com/embed/9Pes54J8PVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <!---->
+    <section class="container mt-5">
+        <!--Imput typ nunber-->
+      <form id="form1" class="form w-50 mx-auto">
+          <label>Coloque a quantidade de telas</label>
+          <input class="form-control" type="number" max="4" min="1" name="qtd_telas" id="qtd_telas" 
+           />                
+      </form>
+      <p class="mt-2">Valor da tela: R$9,90 - Porcentagem de 7%</p>
+      <p id="resultado_telas">xxxx</p>
+      <button id="bt_calcular" class="btn btn-info">Calcular</button>
+    </section>  
+    <!---->  
+    <section class="container mt-5">
+        <!--Select-->
+      <form id="form2" class="form w-50 mx-auto">
+          <label>Escolha uma categoria</label>
+          <select name="cate" id="categorias" class="form-control">
+              <option>...</option> <!--macetinho pra marcar o como nada-->
+              <option value="Ficção">Ficção</option>
+              <option selected value="Suspense">Suspense</option> <!--destaque na caixa-->
+              <option value="Aventura">Aventura</option>
+          </select>
+          <p id="resultado_categorias" class="mt-2 mb-2">xxxx</p>
+          <div id="box_info"></div>
+      </form>
+    </section>    
+</body>
+<script src="js/controle2.js"></script>  
+</html>
