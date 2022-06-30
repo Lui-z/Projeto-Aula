@@ -1,0 +1,5 @@
+[x] inserir o checkout
+[x] identificar quando checkbox marcado ou desmarcado
+[x] gravar uma string em localStorage com os dados da chamada
+[x] criar um numero aleatorio com Math.random
+[] converter uma string em um array
